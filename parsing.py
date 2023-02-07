@@ -2,7 +2,7 @@ import asyncio
 import datetime
 import os
 from datetime import date
-from pprint import pprint
+# from pprint import pprint
 import json
 
 import config
@@ -28,7 +28,7 @@ class Parser:
     def set_date(self, date=date.today()):
         print(date.day - date.weekday())
         print(calendar.monthcalendar(date.year, date.month))
-        pprint(calendar.Calendar().yeardayscalendar(2023))
+        # pprint(calendar.Calendar().yeardayscalendar(2023))
 
     def get_date(self, d=None):
         if not d:
