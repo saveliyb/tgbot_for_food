@@ -12,15 +12,13 @@ jobs:
 
   build:
     environment: main
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     env:
       TOKEN: ${{ secrets.TOKEN }}
       ADMIN_ID: ${{ secrets.ADMIN_ID }}
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker-compose up -d --build
-    - name: Sleep
-      run: sleep 30
+      run: docker compose up -d --build
     - name: Logs
-      run: docker-compose logs bot
+      run: docker compose logs bot
