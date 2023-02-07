@@ -20,6 +20,5 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker-compose up -d --build
-    - name: Dump docker logs on failure
-      if: failure()
-      uses: jwalton/gh-docker-logs@v2
+    - name: Logs
+      run: docker-compose logs bot
