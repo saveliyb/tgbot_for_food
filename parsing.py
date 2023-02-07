@@ -56,7 +56,7 @@ class Parser:
 
     @staticmethod
     def get_menu(nourishment):
-        with open(config.menu_file_name, "r") as file:
+        with open(config.menu_file_name, "r", encoding="UTF-8") as file:
             if nourishment == "завтрак":
                 nourishment = "завтрак I"
             return json.loads(file.read())[str(date.today().weekday())][nourishment]
