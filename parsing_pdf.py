@@ -16,8 +16,17 @@ class ParserPDF:
         self.__get_food_list()
 
     def __get_food_list(self):
-        with open("food_list.txt", "r") as file:
-            self.food_list = file.read().split("\n")
+        import chardet
+
+        with open("food_list.txt", "rb") as file:
+            result = chardet.detect(file.read())
+            file.seek(0)  # Reset the file pointer to the beginning of the file
+            data = file.read().decode(result["encoding"])
+            self.food_list = data.split("\r\n")
+            # print(self.food_list)
+
+        # with open("food_list.txt", "rb") as file:
+        #     self.food_list = file.read().decode("UTF-8").split("\n")
 
     def __read(self, n: int = None):
         spec = ["завтрак", "обед", "ужин", "завт"]
