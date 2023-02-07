@@ -19,6 +19,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker-compose up -d --build
+      run: docker compose up -d --build
     - name: Logs
-      run: docker-compose logs bot
+      run: docker compose logs bot
