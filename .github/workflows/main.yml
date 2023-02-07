@@ -9,6 +9,7 @@ on:
 
 jobs:
 
+
   build:
     environment: main
     runs-on: ubuntu-latest
@@ -19,3 +20,5 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker-compose up -d --build
+    - name: Logs
+      run: docker-compose logs bot
