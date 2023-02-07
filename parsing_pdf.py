@@ -25,7 +25,7 @@ class ParserPDF:
         #     self.food_list = data.split("\r\n")
             # print(self.food_list)
 
-        with open("food_list.txt", "r") as file:
+        with open("food_list.txt", "r", encoding="UTF-8") as file:
             self.food_list = file.read().split("\n")
 
     def __read(self, n: int = None):
@@ -52,8 +52,8 @@ class ParserPDF:
                     t_list.clear()
 
         ans[0] = "завтрак I"
+        print(ans)
         ans[ans.index("завтрак")] = "завтрак II"
-        # print(ans)
         return ans
 
     def __get_food_dict(self, n: int = None):
