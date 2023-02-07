@@ -19,7 +19,7 @@ RUN apt-get update && \
 
 COPY --from=builder /app/wheels /wheels
 COPY --from=builder /app/requirements.txt .
-COPY src .
+COPY . .
 
 RUN pip install --no-cache /wheels/*
 CMD ["python", "main.py"]
