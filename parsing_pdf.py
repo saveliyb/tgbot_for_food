@@ -52,7 +52,7 @@ class ParserPDF:
                     t_list.clear()
 
         ans[0] = "завтрак I"
-        print(ans)
+        # print(ans)
         ans[ans.index("завтрак")] = "завтрак II"
         return ans
 
