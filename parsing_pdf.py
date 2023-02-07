@@ -78,7 +78,7 @@ class ParserPDF:
         return dct
 
     def save_in_txt(self):
-        with open(config.menu_file_name, "w") as file:
+        with open(config.menu_file_name, "w", encoding="UTF-8") as file:
             file.write(json.dumps(self.__get_all_food_dict(), ensure_ascii=False))
 
 # a = Parser()
