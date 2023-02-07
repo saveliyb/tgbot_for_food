@@ -18,4 +18,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker run -it $(docker build -q .)
+      run: docker-compose up -d --build
