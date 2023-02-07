@@ -18,18 +18,17 @@ parser_pdf = ParserPDF()
 
 @dp.message_handler(commands=['q', "start"])
 async def process_start_command(message: types.Message):
-    await message.reply("Привет!", reply_markup=choosing_meal_kb)
+    await message.reply(Dialogs.greeting, reply_markup=choosing_meal_kb)
+
+
+@dp.message_handler(commands=['h', "help"])
+async def process_start_command(message: types.Message):
+    await message.reply(Dialogs.support, reply_markup=choosing_meal_kb)
 
 
 def answer_message(message: str):
     if message[1:-1].lower() in ["завтрак", "обед", "ужин"]:
         return Dialogs.get_food_list(parser.get_menu(message[1:-1].lower()), message[1:-1])
-    # if message[1:-1].lower() == "завтрак":
-    #     return Dialogs.get_food_list(parser.get_munu(message[1:-1]), message[1:-1])
-    # if message[1:-1].lower() == "обед":
-    #     return Dialogs.get_food_list(parser.get_munu(message[1:-1]), message[1:-1])
-    # if message[1:-1].lower() == "ужин":
-    #     return Dialogs.get_food_list(parser.get_munu(message[1:-1]), message[1:-1])
     return "Оу, извини, я не понял что ты сказал"
 
 
@@ -54,7 +53,6 @@ async def set_url(message: types.Message):
 @dp.message_handler()
 async def main_func(message: types.Message):
     """спарвка обычного юзера"""
-    # print(message)
     await message.answer(answer_message(message.text))
 
 
