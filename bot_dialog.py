@@ -6,7 +6,9 @@ class Dialogs:
     support = "{описание функционала и куда тыкать}"
 
     @staticmethod
-    def get_food_list(food_list, nourishment: str, date=datetime.datetime.today().date()) -> str:
+    def get_food_list(food_list, nourishment: str, date=None) -> str:
+        if not date:
+            date = datetime.datetime.today().date()
         text = "\n".join([f"{str(n + 1)}) {food}" for n, food in enumerate(food_list)])
         food_list = f"Меню на {nourishment.lower()} {date.strftime(date.strftime('%d.%m.%Y'))}\n{text}\n\nПриятного аппетита!"
         return food_list

@@ -53,6 +53,7 @@ async def set_url(message: types.Message):
 @dp.message_handler()
 async def main_func(message: types.Message):
     """спарвка обычного юзера"""
+    # print(message)
     await message.answer(answer_message(message.text))
 
 
