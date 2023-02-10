@@ -24,7 +24,7 @@ class Dialogs:
         nourishment = nourishment.lower()
         if nourishment == "ii завтрак":
             nourishment = "II завтрак"
-        food_list = f"Меню на {nourishment.lower()} {date.strftime(date.strftime('%d.%m.%Y'))}\n{text}\n\nПриятного аппетита!"
+        food_list = f"Меню на {nourishment} {date.strftime(date.strftime('%d.%m.%Y'))}\n{text}\n\nПриятного аппетита!"
         return food_list
 
 
