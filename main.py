@@ -27,7 +27,7 @@ async def process_start_command(message: types.Message):
 
 
 def answer_message(message: str):
-    if message[1:-1].lower() in ["завтрак", "обед", "ужин"]:
+    if message[1:-1].lower() in ["завтрак", "обед", "ужин", "ii завтрак"]:
         return Dialogs.get_food_list(parser.get_menu(message[1:-1].lower()), message[1:-1])
     return "Оу, извини, я не понял что ты сказал"
 

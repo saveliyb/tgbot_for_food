@@ -59,6 +59,11 @@ class Parser:
         with open(config.menu_file_name, "r", encoding="UTF-8") as file:
             if nourishment == "завтрак":
                 nourishment = "завтрак I"
+            if nourishment == "ii завтрак":
+                nourishment = "завтрак II"
+            if nourishment == "ужин":
+                dct = json.loads(file.read())[str(date.today().weekday())]
+                return dct[nourishment] + dct["полдник"]
             return json.loads(file.read())[str(date.today().weekday())][nourishment]
 
     def is_actual_menu(self):
