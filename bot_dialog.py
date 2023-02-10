@@ -21,6 +21,9 @@ class Dialogs:
         if not date:
             date = datetime.datetime.today().date()
         text = "\n".join([f"{str(n + 1)}) {food}" for n, food in enumerate(food_list)])
+        nourishment = nourishment.lower()
+        if nourishment == "ii завтрак":
+            nourishment = "II завтрак"
         food_list = f"Меню на {nourishment.lower()} {date.strftime(date.strftime('%d.%m.%Y'))}\n{text}\n\nПриятного аппетита!"
         return food_list
 
